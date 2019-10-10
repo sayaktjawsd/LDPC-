@@ -5,7 +5,6 @@ y_para=[0]*100
 #count=[0]*100 #確認用
 
 #行列の生成
-
 for num in range(200):
     m=[-1,-1,-1]
     for n in range(3):
@@ -16,6 +15,7 @@ for num in range(200):
         y_para[x[num][n]]+=1
         m[n]=x[num][n]
 '''
+#テスト用
 for m in x:
     for n in m:
         count[n]+=1
@@ -28,8 +28,20 @@ with open(file, mode='w') as fp:
             fp.write(str(m))
             fp.write(' ')
 '''
-x=[[0]*200 for i in range(100)]
-for s in x:
-    for t in s:
+h=[[0 for i in range(200)] for j in range(100)]
+for i, c in enumerate(x):
+    for r in c:
+        h[r][i]=1
+
+
+file = os.path.abspath("test.txt")
+with open(file, mode='w') as fp:
+    for hh in h:
+        for t in hh:
+            fp.write(str(t))
+            fp.write(' ')
+        fp.write('\n')
+
+        
         
 
